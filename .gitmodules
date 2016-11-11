@@ -2,3 +2,7 @@
 	path = themes/lynx
 	url = git@github.com:pdxjohnny/hugo-theme-lynx.git
 	branch = master
+[submodule "public"]
+	path = public
+	url = git@github.com:pdxjohnny/pdxjohnny.github.io.git
+	branch = master
