@@ -1,0 +1,4 @@
+[submodule "themes/lynx"]
+	path = themes/lynx
+	url = git@github.com:pdxjohnny/hugo-theme-lynx.git
+	branch = master

@@ -1,0 +1,4 @@
+theme = "lynx"
+baseurl = "https://pdxjohnny.github.io/"
+title = "John Andersen (pdxjohnny)"
+languageCode = "en-us"
