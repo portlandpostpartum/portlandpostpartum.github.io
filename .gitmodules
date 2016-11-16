@@ -6,3 +6,6 @@
 	path = public
 	url = git@github.com:pdxjohnny/pdxjohnny.github.io.git
 	branch = master
+[submodule "themes/cactus"]
+	path = themes/cactus
+	url = git@github.com:pdxjohnny/hugo-cactus-theme
