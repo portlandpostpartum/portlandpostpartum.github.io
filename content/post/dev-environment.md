@@ -3,6 +3,8 @@ title = "Personal Development Environment"
 date = "2020-06-25"
 +++
 
+![tmux-example](/images/tmux-example.png)
+
 ## Tools
 
 Here's a list of things I need to to and the tools I use to do it
