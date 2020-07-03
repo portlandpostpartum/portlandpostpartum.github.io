@@ -9,3 +9,6 @@
 [submodule "themes/cactus"]
 	path = themes/cactus
 	url = git@github.com:pdxjohnny/hugo-cactus-theme
+[submodule "themes/axiom"]
+	path = themes/axiom
+	url = https://github.com/marketempower/axiom.git

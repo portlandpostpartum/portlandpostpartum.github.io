@@ -1,50 +1,122 @@
-theme = "cactus"
-baseurl = "https://pdxjohnny.github.io/"
-title = "John Andersen (pdxjohnny)"
+baseURL = "https://pdxjohnny.github.io"
+
+title = "pdxjohnny's blog"
 languageCode = "en-us"
-# Enter your tracking code to enable Google Analytics
-googleAnalytics = ""
-# Disable comments by leaving disqusShortname empty
-disqusShortname = ""
+defaultContentLanguage = "en"
+
+theme = "axiom"
+
+paginate = 10
+canonifyURLs = false
+summaryLength = 40
+rssLimit = 100
+enableEmoji = true
+enableRobotsTXT = true
+pluralizelisttitles = false
+
+[permalinks]
+posts = "/:filename"
 
 [params]
-	name = "John Andersen"
-	description = ""
-	bio = "Security Researcher - Full Stack and Embedded Systems Developer"
-	# Enter optionally your twitter account
-	twitter = "pdxjohnny"
-	enableRSS = true
+mainSections = ["post"]
+copyrightYear = 2016
+# Go Reference time: Mon Jan 2 15:04:05 MST 2006
+dateFormat = "Jan 2, 2006 3:04PM"
+highlight = "dark"
 
-	# Add custom assets with their paths relative to the static folder
-	customCSS = []
-	customJS  = []
+[params.brand]
+domain = "chadig.com"
+email = "johnandersenpdx@gmail.com"
 
-	# The variables below are optionally too and can be used to
-	# translate or customize each string of the theme.
+[params.social]
+github = "https://github.com/pdxjohnny"
+twitter = "https://twitter.com/pdxjohnny"
+linkedin = "https://www.linkedin.com/in/john-andersen-7a72b555/"
+footer = ["twitter", "github", "linkedin"]
 
-	# Navigation links
-	home = ""
-	about = ""
-	subscribe = ""
-	# Pagination links
-	olderPosts = ""
-	newerPosts = ""
-	readMore = ""
-	copyright = ""
-	# Sharing options and author information in posts
-	aboutAuthor = "up in yo kernel"
-	tweet = ""
-	share = ""
-	# 404 page
-	title404 = ""
-	subtitle404 = ""
+[params.logo]
+inline = false
+path = "images/avatar@2x.png"
 
-	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
-	iconFont = "mono-social"
-    # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
-    socialIconStyle = "circle"
+[params.services]
+analyticsId = "UA-160259978-2"
+adwordsId = ""
+adsenseId = ""
+adsenseAdSlotId = ""
+adsenseLoad = ""
+adwordsConversionId = ""
+adwordsConversionValue = 0
+facebookApp = ""
+facebookPixel = ""
+disqusShortname = ""
 
-# Add additional social link entries underneath
-[social]
-    twitter  = "https://www.twitter.com/pdxjohnny"
-    github   = "https://www.github.com/pdxjohnny"
+[params.image]
+width = "2048"
+height = "1024"
+faviconIco = "favicon.ico"
+faviconAlt = "image/brand/favicon.png"
+icon1To1 = "image/brand/icon-1-1.png"
+icon2To1 = "image/brand/icon-2-1.png"
+default = "image/page-default.webp"
+
+[params.font]
+type = ""
+path = ""
+files = []
+
+[params.cdn]
+provider = "local"
+type = "image"
+
+[outputs]
+home = ["HTML", "ATOM"]
+section = ["HTML"]
+taxonomy = ["HTML"]
+taxonomyTerm = ["HTML"]
+
+[outputFormats]
+[outputFormats.ATOM]
+name = "ATOM"
+baseName = "feed"
+mediaType = "application/atom+xml"
+
+[mediaTypes]
+[mediaTypes."application/atom+xml"]
+suffixes = ["atom"]
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.extensions]
+definitionList = false
+footnote = true
+linkify = true
+strikethrough = false
+table = true
+taskList = false
+typographer = false
+[markup.goldmark.renderer]
+unsafe = false
+[markup.goldmark.parser]
+attribute = false
+[markup.highlight]
+codeFences = true
+noClasses = false
+tabWidth = 2
+# lineNos = true
+# lineNumbersInTable = false
+
+[menu]
+[[menu.main]]
+url = "/about/"
+name = "About"
+weight = 1
+
+[[menu.foot]]
+url = "/about/"
+name = "About"
+weight = 1
+
+[languages]
+[languages."en"]
+weight = 1
+languageName = "English"
