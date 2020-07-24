@@ -3,8 +3,6 @@ date = 2020-07-24T06:00:00Z
 lastmod = 2020-07-24T06:00:00Z
 title = "Linux Kernel Tips And Tricks"
 subtitle = "Working on the Linux kernel itself"
-feature = "image/page-default.webp"
-caption = "Feature image caption and image alt text."
 +++
 
 ## Debugging
