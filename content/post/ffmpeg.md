@@ -33,3 +33,15 @@ Notes:
 
 - `fps=10` lower this number to speed up, number of frames per second, also will
   decrease size of output file
+
+## Crop video
+
+```console
+$ ffmpeg -i putin-on-ritz.mp3 -ss 00:00:43 -t 00:00:57 -async 1 cut.mp3
+```
+
+## Combine with image
+
+```console
+$ ffmpeg -loop 1 -y -i putin-on-the-ritz.jpg -i cut.mp3 -shortest out.webm
+```
