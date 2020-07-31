@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://pdxjohnny.github.io/sitemap.xml
