@@ -1,6 +1,6 @@
 ######################## default configuration ####################
-baseURL = "https://www.example.com"
-title = "Persian"
+baseURL = "https://portlandpostpartum.github.io"
+title = "Portland Postpartum"
 theme = "persian"
 languageName = "En"
 languageCode = "en-us"
@@ -48,34 +48,19 @@ name = "About"
 URL = "about"
 weight = 2
 
-[[menu.main]]
-name = "Category"
-URL = "categories/nature/"
-weight = 3
-
-[[menu.main]]
-name = "Contact"
-URL = "contact"
-weight = 4
-
-[[menu.main]]
-name = "Privacy Policy"
-URL = "privacy-policy"
-weight = 5
-
 
 #################### default parameters ################################
 [params]
 logo = "images/logo.png"
 # Meta data
-description = "This is meta description"
-author = "Themefisher"
+description = "Portland Postpartum"
+author = "Portland Postpartum"
 # search  
 search = true
 # contact form action
 contact_form_action = "#" # contact form works with https://formspree.io
 # copyright
-copyright = "Designed By [Themefisher](https://themefisher.com/) & Developed By [Gethugothemes](https://gethugothemes.com/)"
+copyright = "2020 - Portland Postpartum"
 
 # Preloader
 [params.preloader]
