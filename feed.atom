@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-us">
+  <title>pdxjohnny&#39;s blog</title>
+  <subtitle></subtitle>
+  <id>https://pdxjohnny.github.io/</id>
+  <author>
+    <name>pdxjohnny&#39;s blog</name>
+    <uri>https://pdxjohnny.github.io/</uri>
+  </author>
+  <icon>https://pdxjohnny.github.io/image/brand/icon-1-1.png</icon>
+  <logo>https://pdxjohnny.github.io/image/brand/icon-2-1.png</logo>
+  <updated>2020-07-07T19:23:35Z</updated>
+  <link rel="self" type="application/atom+xml" href="https://pdxjohnny.github.io/feed.atom" hreflang="en-us"/>
+  <link rel="alternate" type="text/html" href="https://pdxjohnny.github.io/" hreflang="en-us"/>
+  <entry>
+    <title>Time Saving Tricks and Hacks</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/post/tricks/</id>
+    <updated>2020-07-07T19:00:00Z</updated>
+    <published>2020-07-07T19:00:00Z</published>
+    <content type="html"><![CDATA[<p>Use grep to displays blocks of text. Only display blocks with certain text
+inside them.</p>
+<pre><code class="language-console" data-lang="console">$ git grep -A 25 -E 'dffml train|dffml accuracy|dffml predict' | python -c 'import sys; print(&quot;--&quot;.join([i for i in sys.stdin.read().split(&quot;--&quot;) if not &quot;model-directory&quot; in i]).strip())'
+</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>Personal Development Environment</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/post/dev-environment/</id>
+    <updated>2020-06-25T00:00:00Z</updated>
+    <published>2020-06-25T00:00:00Z</published>
+    <content type="html"><![CDATA[<p><img src="/images/tmux-example.png" alt="tmux-example"></p>
+<h2 id="tools">Tools</h2>
+<p>Here's a list of things I need to to and the tools I use to do it</p>
+<ul>
+<li>Development Environment
+<ul>
+<li>Editor
+<ul>
+<li><a href="https://www.vim.org/">vim</a>
+<ul>
+<li><a href="https://vim-adventures.com/">Learn VIM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Terminal Multiplexer
+<ul>
+<li>Let's you turn a single shell session into a bunch of shells, you can put
+them side by side, have tabs, label them, etc.</li>
+<li><a href="https://github.com/tmux/tmux/wiki">tmux</a>
+<ul>
+<li><a href="https://gist.github.com/MohamedAlaa/2961058">Cheatsheet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li><a href="https://nodemon.io/">nodemon</a>
+<ul>
+<li>This will change your life. Its a command line utility that will re-run
+a command when files with certain extentions change. You can use it to
+re-compile (if applicable) and re-test whatever your working on every
+time you save a file! This will also introduce you to a massive reward
+feedback loop like none other. Have fun.</li>
+<li><code>nodemon -e py --exec 'clear; python script.py; test 1'</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Chat
+<ul>
+<li>IRC
+<ul>
+<li><a href="https://weechat.org/">weechat</a>
+<ul>
+<li><a href="https://weechat.org/files/doc/stable/weechat_quickstart.en.html">Quickstart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Web based
+<ul>
+<li><a href="">Gitter</a>
+<ul>
+<li>Good for GitHub communities</li>
+</ul>
+</li>
+<li><a href="https://discord.com/">discord</a>
+<ul>
+<li>Has peer to peer (webrtc based) video and voice chat</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Documentation
+<ul>
+<li>Videos and Gifs
+<ul>
+<li><a href="https://obsproject.com">Open Broadcaster Software</a>
+<ul>
+<li>I use this to record my screen, it's cross platform and open source</li>
+</ul>
+</li>
+<li><a href="https://ffmpeg.org/">ffmpeg</a>
+<ul>
+<li>I use this to convert videos I've recorded into gifs to use in README's
+and documenation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Meetings
+<ul>
+<li><a href="https://meet.google.com">Google Meet</a></li>
+</ul>
+</li>
+<li>Email
+<ul>
+<li><a href="https://weechat.org/">mutt</a>
+<ul>
+<li><a href="https://weechat.org/files/doc/stable/weechat_quickstart.en.html">Quickstart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="dotfiles">dotfiles</h2>
+<p>Dotfiles is a term for configuration files. The name comes from their usually
+being prefixed with a <code>.</code>. This is because on UNIX operating systems, files
+prefixed with a <code>.</code> are <em>hidden</em>.</p>
+<p>Here are mine: <a href="http://github.com/pdxjohnny/dotfiles">http://github.com/pdxjohnny/dotfiles</a></p>
+<h2 id="reasoning">Reasoning</h2>
+<p>I forced myself to get used to a primarily terminal based development
+environment because I constantly find myself on systems where I have either only
+ssh or serial access.</p>
+<p>Let me give you some scenarios where this might happen to you (and therefore its
+nice to already be used to a terminal based workflow).</p>
+<ul>
+<li>You run Linux, your desktop crashed or froze
+<ul>
+<li>Press Ctrl-Alt-[F1 through F12] and you'll be presented with a terminal!</li>
+<li>You're on a deadline (because when else would your desktop crash or freeze)
+or your not sure what will happen / you will loose if you reboot the
+machine.</li>
+<li>No worries! Just <code>tmux attach</code> and you're right back where you were! Commit
+your work, push it and reboot without worry.</li>
+</ul>
+</li>
+<li>The production server broke
+<ul>
+<li>You're probably only going to have <code>ssh</code> access to this thing. You going to
+want to read the logs and be able to poke around the file system with your
+editor of choice (mine is <code>vim</code>) and restart stuff to see what's wrong.
+(Chances are the server won't have <code>tmux</code>, but it might have
+<a href="https://linuxize.com/post/how-to-use-linux-screen/"><code>screen</code></a> which is
+similar so you'll be familiar with the concept).</li>
+</ul>
+</li>
+<li>You started a VM from the command line using QEMU (likely with
+<code>-nographic -append &quot;console=ttyS0&quot;</code>) so you have a terminal into the guest
+Linux machine but it's not a full ssh session, you're likely limited to 80
+columns here. You'll be glad you stuck to 80 columns now that's all you can
+see without whacky &quot;scrolling&quot;.</li>
+</ul>
+<h3 id="alt-tab">Alt-Tab</h3>
+<p>The top reason why I do everything in the terminal though is Alt-Tab.</p>
+<p>If you keep all your chat, email, open code repos in tabs within <code>tmux</code> then
+open one browser window for all the docs, web based chats, etc. The beauty of
+this is you only ever have two windows open. Which means whenever you hit
+Alt-Tab you never have to guess where your going to end up! This is going to
+save you insane amounts of time in the long run. Ditch the clutter. Hakuna
+Matata.</p>]]></content>
+  </entry>
+  <entry>
+    <title>Clear Containers on Arch Linux</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/post/clear-containers-on-arch-linux/</id>
+    <updated>2017-01-18T05:06:04Z</updated>
+    <published>2017-01-18T05:06:04Z</published>
+    <content type="html"><![CDATA[<p>So you want the security of a virtual machine but the ease of use of docker and
+containers? Well Clear Containers is the solution for you my friend. Here I am
+going to show you how to install and configure the Clear Containers runtime on
+your Arch Linux host.</p>
+<p>I have created to packages in AUR to assit you in building the packages you
+need.</p>
+<h3 id="qemu-lite-package">qemu-lite package</h3>
+<p><a href="https://github.com/01org/qemu-lite">qemu-lite</a> provides virtualisation for Clear Containers. It's a fork of qemu
+that has a new machine type, pc-lite. Which is a traditional x86_64 machine
+with a lot of things striped out. This lets them turn off a lot of things in
+the Linux kernel config and thus increases the speed at which the VM (Container
+in this case) is run. This also decreases time it takes the virtualised
+container to start up.</p>
+<p>Lets build qemu-lite, which will replace the hosts qemu package. We just need
+to clone the package from the AUR, build it with makepkg, and install it with
+pacman.</p>
+<p>pacman will complain about qemu-arch-extra and qemu-launcher needing the
+regular qemu so if you have those installed you need to remove them. They will
+not work with qemu-lite.</p>
+<pre><code># Download the one I built for you
+wget https://github.com/pdxjohnny/pdxjohnny.github.io/releases/download/CCARCH/qemu-lite-2.7.1-1-x86_64.pkg.tar.xz
+# Or build it yourself!
+git clone https://aur.archlinux.org/qemu-lite.git
+cd qemu-lite
+makepkg -cs
+# Then install
+sudo pacman -U qemu-lite-2.7.1-1-x86_64.pkg.tar.xz
+</code></pre><h3 id="cc-oci-runtime-package">cc-oci-runtime package</h3>
+<p>The <a href="https://github.com/01org/cc-oci-runtime">Clear Containers runtime</a> is an alternative to runc. You can have some
+containers running runc and some running cor (Clear Containers runtime), or all
+one or the other. It provides the management of qemu-lite so you can use these
+VMs as if they were containers. Basically its where the magic happens.</p>
+<pre><code># Download the one I built for you
+wget https://github.com/pdxjohnny/pdxjohnny.github.io/releases/download/CCARCH/cc-oci-runtime-2.1.0-1-x86_64.pkg.tar.xz
+# Or build it yourself!
+git clone https://aur.archlinux.org/cc-oci-runtime.git
+cd qemu-lite
+makepkg -cs
+# Then install
+sudo pacman -U cc-oci-runtime-2.1.0-1-x86_64.pkg.tar.xz
+</code></pre><h3 id="configuration">Configuration</h3>
+<p>Now we need to change how the docker deamon is run so that it knows about the
+runtime he have just installed.</p>]]></content>
+  </entry>
+  <entry>
+    <title>3 Resistor Bias Circuit with NMOS Transistor</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/post/3-resistor-bias-nmos/</id>
+    <updated>2016-11-11T20:22:04Z</updated>
+    <published>2016-11-11T20:22:04Z</published>
+    <content type="html"><![CDATA[<h2 id="circuit">Circuit</h2>
+<p><img src="/images/3-resistor-bias-circuit.png" alt="3-resistor-bias-circuit"></p>
+<h2 id="steps">Steps</h2>
+<ul>
+<li>Pick a Vdd</li>
+</ul>
+<pre><code>9 Volts
+</code></pre><ul>
+<li>Pick a transistor and Vtn for it</li>
+</ul>
+<pre><code>2N7002
+Vtn = 1.6
+</code></pre><ul>
+<li>Pick and Id</li>
+</ul>
+<pre><code>2 mA
+</code></pre><ul>
+<li>Find RL for Vdd and Id</li>
+</ul>
+<pre><code>RL = Vdd / Id
+RL = 9 Volts / 2 mA
+RL = 4.5 k Ohms
+</code></pre><ul>
+<li>Pick a much smaller current for R1 and R2, Ir (bias resistor current)</li>
+</ul>
+<pre><code>Ir = 200 uA
+</code></pre><ul>
+<li>Find R1 and R2 such that the voltage drop across R2 is the same as Vtn. This
+is so that any input signal at all will act to turn on the transistor. Then
+make R1 drop the rest of Vdd.</li>
+</ul>
+<pre><code>R2 = Vtn / Ir
+R2 = 1.6 / 200 uA
+R2 = 8 k Ohms
+
+R2 = (Vdd - Vtn) / Ir
+R2 = (9 - 1.6) / 200 uA
+R2 = 7.4 / 200 uA
+R2 = 37 k Ohms
+</code></pre><ul>
+<li>Plug in reasonable values for the rest</li>
+</ul>
+<p>Cin and Cout should both be much much (two orders of magnitude) less than their
+respective resistors.</p>
+<pre><code>Rin = 1 k Ohms
+Cin = 470 nF
+Cout = 470 nF
+Rout = 100k
+</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>ARM workflow with qemu and arm-none-eabi</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/post/arm-qemu/</id>
+    <updated>2016-11-09T22:57:07Z</updated>
+    <published>2016-11-09T22:57:07Z</published>
+    <content type="html"><![CDATA[<p>This should get you up and running writing ARM assembly without hardware.</p>
+<p>Clone this the repo for this turtorial.</p>
+<pre><code>git clone https://gist.github.com/pdxjohnny/3de9a9bdd38cacf3ea394207762f1002 arm-qemu
+</code></pre><h2 id="dependencies">Dependencies</h2>
+<p>The first step is to install the necessary packages. These are the
+arm-none-eabi tool chain and qemu with arm support.</p>
+<h4 id="arch-linux">Arch Linux</h4>
+<pre><code>sudo pacman -S arm-none-eabi-gcc arm-none-eabi-binutils arm-none-eabi-gdb \
+  arm-none-eabi-newlib qemu qemu-arch-extra
+</code></pre><h4 id="ubuntu">Ubuntu</h4>
+<pre><code>sudo apt -y install make qemu-system-arm \
+    gcc-arm-none-eabi binutils-arm-none-eabi gdb-arm-none-eabi \
+    libstdc++-arm-none-eabi-newlib libnewlib-arm-none-eabi
+</code></pre><h2 id="gdb">GDB</h2>
+<p>In <code>.gdbinit</code> we have placed commands which gdb will run on startup. But to
+make this work the <code>.gdbinit</code> file in our home directory needs to say its ok
+for gdb to load this <code>.gdbinit</code> file. To do that we just add the directory to
+the auto-load safe-path.</p>
+<pre><code>echo &quot;set auto-load safe-path $PWD&quot; &gt;&gt; ~/.gdbinit
+</code></pre><h2 id="building">Building</h2>
+<p>The Makefile should have plenty of comments to help you understand what is
+being done in it. It takes all the <code>.s</code> assembly files in the current directory
+and compiles them into object files. Then it runs the linker to create the ELF
+binary. All of this is done with arm-none-eabi-gcc rather than your regular
+gcc for host programs.</p>
+<pre><code>make
+</code></pre><p>Will rebuild all the modified <code>.s</code> files into their object file forms and
+relink to the binary. Run <code>make clean all</code> if you are having really weird
+errors. That usually fixes things.</p>
+<h2 id="running">Running</h2>
+<p>To run you can do <code>qemu-arm ./main</code>. But hey why not put it in the Makefile
+right.</p>
+<pre><code>make all qemu
+</code></pre><p>Will rebuild any changed files and run the created binary in qemu.</p>
+<h2 id="debugging">Debugging</h2>
+<p>Oh you ran the program and everything exploded? Time to debug.</p>
+<pre><code>make all gdb
+</code></pre><p>Will rebuild all your source files and start the program in qemu with it as a
+gdb target on port 1234, so make sure nothing else is using that port or change
+it in the <code>.gdbinit</code> file and <code>Makefile</code>.</p>
+<h2 id="help-nothing-works">Help nothing works</h2>
+<p>Comment on the gist with the problem so we can figure it out and everyone else
+can see the solution.</p>]]></content>
+  </entry>
+  <entry>
+    <title>Trinity fuzzer on Android (on Intel)</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/post/trinity-fuzzer-android/</id>
+    <updated>2016-10-17T19:51:22Z</updated>
+    <published>2016-10-17T19:51:22Z</published>
+    <content type="html"><![CDATA[<h2 id="step-1---clone-trinity">Step 1 - Clone trinity</h2>
+<p>Grab the source for trinity. We need to make some minor modifications.</p>
+<blockquote>
+<p>At the time of writing this the latest commit on master was
+3a0e33d1db3214503316840ecfb90075d60ab3be adapt instructions as necessary. The
+basic idea of static linking and disabling of feature's you don't need is
+still the same.</p>
+</blockquote>
+<pre><code>git clone https://github.com/kernelslacker/trinity
+cd trinity
+./configure
+</code></pre><h2 id="step-2---32-bit-and-static-compilation">Step 2 - 32 bit and static compilation</h2>
+<p>Edit the make file and add <code>-m32</code> to any line containing <code>CFLAGS</code> and add
+<code>-static</code> to any line containing <code>LDFLAGS</code>. Just one line not all of them that
+say LD/CFLAGS. For example.</p>
+<pre><code>CFLAGS += -Wall -Wextra -g -O2 -I. -Iinclude/ -Wimplicit -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D__linux__
+</code></pre><p>Becomes</p>
+<pre><code>CFLAGS += -Wall -Wextra -g -O2 -I. -Iinclude/ -Wimplicit -D_FORTIFY_SOURCE=2 -D_GNU_SOURCE -D__linux__ -m32
+</code></pre><p>And</p>
+<pre><code>LDFLAGS += -rdynamic
+</code></pre><p>Becomes</p>
+<pre><code>LDFLAGS += -rdynamic -static
+</code></pre><p>Just change two lines and you're done.</p>
+<h2 id="step-3---fix-syscallssendc">Step 3 - Fix syscalls/send.c</h2>
+<p>I found that gcc 6.2.1 said that this is an error so it wouldn't let me
+compile without this typecast. I haven't noticed anything strange by doing this
+so I assume everything still works.</p>
+<p>Change the line that reads</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">proto</span><span class="o">-&gt;</span><span class="n">gen_packet</span><span class="p">(</span><span class="o">&amp;</span><span class="n">si</span><span class="o">-&gt;</span><span class="n">triplet</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rec</span><span class="o">-&gt;</span><span class="n">a3</span><span class="p">);</span>
+</code></pre></div><p>To</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="n">proto</span><span class="o">-&gt;</span><span class="n">gen_packet</span><span class="p">(</span><span class="o">&amp;</span><span class="n">si</span><span class="o">-&gt;</span><span class="n">triplet</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="p">(</span><span class="n">size_t</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">rec</span><span class="o">-&gt;</span><span class="n">a3</span><span class="p">);</span>
+</code></pre></div><p>And you should now make it past that compilation error.</p>
+<blockquote>
+<p>syscalls/send.c:33:41: error: passing argument 3 of ‘proto-&gt;gen_packet’ from
+incompatible pointer type [-Werror=incompatible-pointer-types]</p>
+</blockquote>
+<h2 id="step-4---edit-configh">Step 4 - Edit config.h</h2>
+<p>Take out anything you don't need or can't compile from <code>config.h</code>. For instance
+Android recommends building on Ubuntu 16.04 so we were on a Ubuntu 16.04.1 LTS
+machine which at the time of writing is Linux 4.4ish. So we couldn't compile
+<code>fds/bpf.c</code> because the kernel headers didn't contain the right version of
+<code>linux/bpf.h</code> (bpf_addr was missing some members).</p>
+<p>The solution is to comment out <code>USE_BPF</code> from <code>config.h</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define USE_BPF 1
+</span></code></pre></div><p>After</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">// #define USE_BPF 1
+</span></code></pre></div><h2 id="step-5---verify">Step 5 - Verify</h2>
+<p>Before we push to the device make sure it has a chance of working. This means
+that it will be 32-bit staticly linked. For the edits we just made to the
+commit refernced at the top of this doc file reports the following.</p>
+<pre><code>file trinity
+trinity: ELF 32-bit LSB executable, Intel 80386, version 1 (GNU/Linux), statically linked, for GNU/Linux 2.6.32, BuildID[sha1]=e533cc2db1db19c044bdbfa566c72299df7eefc2, not stripped
+</code></pre><h2 id="step-6---push-and-run">Step 6 - Push and Run</h2>
+<p>Put in on the device and run from <code>/sdcard</code> folder.</p>
+<pre><code>adb root
+adb remount rw
+adb disable-verity
+adb reboot
+adb push trinity /data/trinity
+adb shell 'cd /sdcard &amp;&amp; /data/trinity --dangerous -V /dev/ 2&gt;&amp;1' | tee trinity-dev-1.log
+</code></pre><p>Take the blue pill and profit</p>]]></content>
+  </entry>
+  <entry>
+    <title>Fuzzing network applications with peach</title>
+    <author>
+      <name>John Andersen</name>
+      <uri>https://pdxjohnny.github.io/</uri>
+    </author>
+    <id>https://pdxjohnny.github.io/post/peach-network/</id>
+    <updated>2016-08-10T20:35:13Z</updated>
+    <published>2016-08-10T20:35:13Z</published>
+    <content type="html"><![CDATA[<p>So you want to fuzz network applications with peach eh? Well you've come to the
+right place. This is a tutorial on how to get you fuzzing TCP applications,
+without TLS/SSL enabled. If you want to fuzz UDP or an application which only
+communicates via TLS/SSL then this is a great place for you to start, however it
+will not answer all your questions. I will point you in the right direction at
+the end of this post.</p>
+<p>The first step in fuzzing is to understand the structure of the protocol. It
+often helps to have an example of this structure. Therefore we will be
+capturing the data of our target and simply playing it back. If you were to
+spend more time, which you should, then you would make data models in peach
+which contain specific fields rather than the blob we will be using.</p>
+<p>The two most well known ways of getting network traffic are tcpdump and
+wireshark. Peach can use input from a file for the data model and mutate it. We
+are going to use a tiny tool I wrote to capture the conversations back and
+forth rather than telling you to open tcpdump / wireshark and copy paste to a
+file. If you would rather do that be my guest.</p>
+<h2 id="enter-convo-capture">Enter convo-capture</h2>
+<p>This saves the TCP conversation to files. Give it the port and host it needs to
+be monitoring. This is especially useful for fuzzing with peach on TCP based
+programs so that you don't have to go into wireshark to capture then copy paste
+the data from each sequence of packets. This will take all packets and put them
+in a file until the other endpoint sends data. Then it will increment the
+number on the exchange and write the data to that exchanges file.</p>
+<p>The binary has been built and included in the gist for your convenience.</p>
+<blockquote>
+<p>By no means do I condone putting binaries in git repos but I know not
+everyone has the go toolchain. You need libpcap and libpthread to run it.</p>
+</blockquote>
+<p>Building will use sudo because it will <code>set_cap_raw</code> on convo-capture. If you
+don't want to set this then you have to run convo-capture as root.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://gist.github.com/pdxjohnny/e2d1df77e81f07254da192fe1bc568a0 convo-capture
+<span class="nb">cd</span> !$
+./build.sh
+</code></pre></div><p>Now you can move it to bin if you want or run it prepended with ./ from the
+directory you built it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo mv convo-capture /usr/bin/convo-capture
+</code></pre></div><blockquote>
+<p>Personally I like to put things in ~/.local/bin/ but do as you will</p>
+</blockquote>
+<p>We are now ready to capture packets. Keep in mind that convo-capture will not
+write over files that you have previously captured if they are in the directory
+you are working in. Be sure to delete files from previous captures or change to
+a new directory.</p>
+<p>Let's try to capture HTTP traffic using curl and python3's http.server
+(SimpleHTTPServer in python2). First we need to ssh to another computer and
+start an HTTP server or we can start one on our local machine. If you start one
+on your machine then everywhere you see example.com replace it with localhost
+and add <code>-i lo</code> to convo-capture for capturing on the loopback interface.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>pdxjohnny@pdxjohnny convo-capture<span class="o">]</span>$ ssh example.com
+<span class="o">[</span>pdxjohnny@example.com ~<span class="o">]</span>$ python3 -m http.server <span class="m">4444</span>
+</code></pre></div><p>Now that we have a HTTP server running lets start convo-capture.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># For localhost add -i lo</span>
+<span class="c1"># convo-capture -p 4444 -ip localhost -i lo -v</span>
+<span class="o">[</span>pdxjohnny@pdxjohnny convo-capture<span class="o">]</span>$ convo-capture -p <span class="m">4444</span> -ip example.com -v
+Capturing TCP port <span class="m">4444</span> <span class="k">for</span> host example.com
+</code></pre></div><p>Ok great we are now capturing all traffic going to example.com on port 4444 from
+our computer and from example.com port 4444 back to our computer.
+Now we just need to use curl to generate a request we can capture.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">curl -v http://example.com:4444/file
+</code></pre></div><p>Request sent! Look back at the session running convo-capture, you should see
+that the output you observed in curl has been captured (expect for the &lt; and &gt;
+left of the headers, curl adds those).</p>
+<pre><code class="language-log" data-lang="log">[pdxjohnny@pdxjohnny convo-capture]$ convo-capture -p 4444 -ip example.com -v
+Capturing TCP port 4444 for host example.com
+GET /file HTTP/1.1
+Host: example.com:4444
+User-Agent: curl/7.47.0
+Accept: */*
+
+HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.4.2
+Date: Wed, 10 Aug 2016 16:38:42 GMT
+Content-type: text/plain
+Content-Length: 514
+Last-Modified: Tue, 26 Jul 2016 14:43:05 GMT
+
+Yo this is the file
+</code></pre><p>Now you can ctrl-c to stop the capture. As you can see we captured the
+conversation from our local machine to the remote host and the response the
+remote host sent us. If you do an ls you will also see the files that were
+created by this capture.</p>
+<pre><code class="language-log" data-lang="log">[pdxjohnny@pdxjohnny convo-capture]$ ls -lAF
+total 5752
+... Aug 10 09:34 10.7.202.149-&gt;10.7.202.78-0
+... Aug 10 09:34 10.7.202.78-&gt;10.7.202.149-0
+... Aug 10 08:35 build.sh*
+... Aug 10 09:17 convo-capture*
+... Aug 10 09:33 .git/
+... Aug 10 09:16 .gitignore
+... Aug 10 09:15 main.go
+... Aug 10 09:58 README.md
+</code></pre><p>cating the files will make convo-capture's usefulness apparent.</p>
+<pre><code class="language-log" data-lang="log">[pdxjohnny@pdxjohnny convo-capture]$ cat 10.7.202.149-&gt;10.7.202.78-0
+GET /file HTTP/1.1
+Host: example.com:4444
+User-Agent: curl/7.47.0
+Accept: */*
+
+[pdxjohnny@pdxjohnny convo-capture]$ cat 10.7.202.78-&gt;10.7.202.149-0
+HTTP/1.0 200 OK
+Server: SimpleHTTP/0.6 Python/3.4.2
+Date: Wed, 10 Aug 2016 16:38:42 GMT
+Content-type: text/plain
+Content-Length: 514
+Last-Modified: Tue, 26 Jul 2016 14:43:05 GMT
+
+Yo this is the file
+</code></pre><p>As you can see it has assembled the packets into files based on the order they
+were sent in. For me the second file, the servers reply, was two packets.
+convo-capture saw the two packets in a row from the server to client and said
+ok this is all part of one message I'm going to save it to a file as such. A
+message is a continuous sequence of packets ended when the other side starts
+sending a message. The more messages that are collected the more files you will
+see after you kill convo-capture.</p>
+<p>There was only one back and forth so they are both 0 in the sequence. If you
+were to have ran curl twice with convo-capture running then you would see the
+contents of 0 repeated in 1.</p>
+<p>This is very useful for fuzzing with peach. Peach allows us to order our call
+and response to the target program. For example say you want to fuzz something
+like git. git is not a simple call and response. It has an exchange of call,
+response, call, response for a clone. Let's walk through how you would use
+convo-capture to fuzz the git protocol with peach.</p>
+<h2 id="capturing-the-git-protocol">Capturing the git protocol</h2>
+<p><a href="https://asciinema.org/a/7xd0u4u0vfv7n7s7gq4f0zdg2"><img src="https://asciinema.org/a/7xd0u4u0vfv7n7s7gq4f0zdg2.png" alt="asciicast"></a></p>
+<blockquote>
+<p>This video goes shows the how to capture the data involved in a git clone
+over the git protocol. Use it as a reference if you are having trouble with
+the steps below.</p>
+</blockquote>
+<p>Let's take a stroll on over to tmp so we don't create a bunch of useless files.
+We'll make a directory there to play in.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir /tmp/demo
+<span class="nb">cd</span> /tmp/demo
+</code></pre></div><p>Make a few directories so nothing writes over each other. Then well make a git
+repo and populate it with some files.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir clonedir capture
+mkdir testrepo
+<span class="nb">cd</span> testrepo
+cat <span class="s">&lt;&lt; EOF &gt; README.md
+</span><span class="s">This is a super cool test repo
+</span><span class="s">EOF</span>
+git init
+git add -A
+git commit -sam <span class="s1">&#39;Added README.md&#39;</span>
+<span class="nb">cd</span> ..
+<span class="c1"># You should now be back in /tmp/demo</span>
+</code></pre></div><p>We have our testrepo, now lets create a bare copy of it to be served by <a href="https://git-scm.com/book/en/v1/Git-on-the-Server-Git-Daemon">git
+daemon</a>. This requires that we make the <code>git-daemon-export-ok</code> file
+as well. Then we will start the git server.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone --bare testrepo testrepo.git
+touch testrepo.git/git-daemon-export-ok
+git daemon --reuseaddr --base-path<span class="o">=</span><span class="nv">$PWD</span> <span class="nv">$PWD</span>
+<span class="c1"># PWD is faster than typing /tmp/demo</span>
+</code></pre></div><p>Great! The git server is up! We can look up what port it is running on, but
+if perhaps we were fuzzing something we didn't know we would have to find out.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Apparently netstat is depricated, so let&#39;s use ss</span>
+ss -ltnp <span class="p">|</span> grep git
+</code></pre></div><p>Alright its port 9418. In another shell go to the capture directory and start
+convo-capture.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /tmp/demo/capture
+convo-capture -p <span class="m">9418</span> -i lo
+</code></pre></div><p>Capture is running, git server is up, all that's left is to go to clonedir and
+watch the magic happen.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /tmp/demo/clonedir
+git clone git://localhost/testrepo.git
+</code></pre></div><p>Now switch back to the shell running convo-capture and hit it will ctrl-c. You
+should see four files in the capture directory. We are going to fuzz the git
+client so right now we are interested in the files which go from port 9418 to
+some other port.</p>
+<h2 id="using-our-captured-data-to-fuzz-with-peach">Using our captured data to fuzz with peach</h2>
+<p>You should usually test against the master branch or the latest version of
+whatever you are fuzzing. You don't want to waste time finding something which
+has already been fixed. This is why we are going to build git from source. Of
+course you don't have to do this. But if you have never built something from
+source it would be good practice.</p>
+<p><a href="https://asciinema.org/a/82390"><img src="https://asciinema.org/a/82390.png" alt="asciicast"></a></p>
+<blockquote>
+<p>This video shows the peach process. You probably want to skip past the
+part were we run make on git.</p>
+</blockquote>
+<p>Now that we know what the git server is sending to the client we could either
+fuzz the server or the client. The client is easy because it exits after
+cloning were as the server stays up to serve requests.</p>
+<p>We are going to compile git from source so we need to download its
+dependencies.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get -y install libcurl4-gnutls-dev libexpat1-dev gettext <span class="se">\
+</span><span class="se"></span>  libz-dev libssl-dev <span class="se">\
+</span><span class="se"></span>  <span class="o">||</span> sudo yum install curl-devel expat-devel gettext-devel <span class="se">\
+</span><span class="se"></span>  openssl-devel perl-devel zlib-devel
+</code></pre></div><p>Now we are going to clone git build it and install it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir -p /tmp/demo/
+<span class="nb">cd</span> /tmp/demo/
+git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/git/git
+<span class="nb">cd</span> /tmp/demo/git/
+<span class="c1"># I found that the latest git doesn&#39;t cooperate unless I install it</span>
+sudo make install
+git --version
+</code></pre></div><p>Git is installed, now lets copy our relevant captures to a testing directory.
+Here we clone the repo for this post and copy the git.xml file out of it. But
+you could of course make your own or modify the one here.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /tmp/demo/
+mkdir gitfuzzy
+<span class="nb">cd</span> gitfuzzy
+cp /tmp/demo/capture/<span class="se">\:\:</span>1<span class="se">\:</span>9418-<span class="se">\&gt;</span>* ./
+git clone https://gist.github.com/pdxjohnny/e2d1df77e81f07254da192fe1bc568a0 t
+cp t/git.xml ./
+</code></pre></div><p><code>git.xml</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span class="nt">&lt;Peach&gt;</span>
+    <span class="nt">&lt;DataModel</span> <span class="na">name=</span><span class="s">&#34;TheDataModel&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Blob/&gt;</span>
+    <span class="nt">&lt;/DataModel&gt;</span>
+    <span class="nt">&lt;StateModel</span> <span class="na">name=</span><span class="s">&#34;TheState&#34;</span> <span class="na">initialState=</span><span class="s">&#34;Initial&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;State</span> <span class="na">name=</span><span class="s">&#34;Initial&#34;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Action</span> <span class="na">type=</span><span class="s">&#34;accept&#34;</span><span class="nt">/&gt;</span>
+            <span class="c">&lt;!-- receive bytes --&gt;</span>
+            <span class="nt">&lt;Action</span> <span class="na">type=</span><span class="s">&#34;input&#34;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;DataModel</span> <span class="na">ref=</span><span class="s">&#34;TheDataModel&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/Action&gt;</span>
+            <span class="c">&lt;!-- send bytes --&gt;</span>
+            <span class="nt">&lt;Action</span> <span class="na">type=</span><span class="s">&#34;output&#34;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;DataModel</span> <span class="na">ref=</span><span class="s">&#34;TheDataModel&#34;</span><span class="nt">/&gt;</span>
+                <span class="c">&lt;!-- Change this to be whatever port your git client was on --&gt;</span>
+                <span class="nt">&lt;Data</span> <span class="na">fileName=</span><span class="s">&#34;::1:9418-&gt;::1:58226-0&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/Action&gt;</span>
+            <span class="c">&lt;!-- receive bytes --&gt;</span>
+            <span class="nt">&lt;Action</span> <span class="na">type=</span><span class="s">&#34;input&#34;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;DataModel</span> <span class="na">ref=</span><span class="s">&#34;TheDataModel&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/Action&gt;</span>
+            <span class="c">&lt;!-- send bytes --&gt;</span>
+            <span class="nt">&lt;Action</span> <span class="na">type=</span><span class="s">&#34;output&#34;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;DataModel</span> <span class="na">ref=</span><span class="s">&#34;TheDataModel&#34;</span><span class="nt">/&gt;</span>
+                <span class="c">&lt;!-- Change this to be whatever port your git client was on --&gt;</span>
+                <span class="nt">&lt;Data</span> <span class="na">fileName=</span><span class="s">&#34;::1:9418-&gt;::1:58226-1&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/Action&gt;</span>
+        <span class="nt">&lt;/State&gt;</span>
+    <span class="nt">&lt;/StateModel&gt;</span>
+    <span class="nt">&lt;Agent</span> <span class="na">name=</span><span class="s">&#34;LinAgent&#34;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- Register for core file notifications. --&gt;</span>
+        <span class="nt">&lt;Monitor</span> <span class="na">class=</span><span class="s">&#34;LinuxDebugger&#34;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- This is the program we&#39;re going to run inside of the debugger --&gt;</span>
+            <span class="nt">&lt;Param</span> <span class="na">name=</span><span class="s">&#34;Executable&#34;</span> <span class="na">value=</span><span class="s">&#34;git&#34;</span><span class="nt">/&gt;</span>
+            <span class="c">&lt;!-- These are arguments to the executable we want to run --&gt;</span>
+            <span class="nt">&lt;Param</span> <span class="na">name=</span><span class="s">&#34;Arguments&#34;</span> <span class="na">value=</span><span class="s">&#34;clone git://127.0.0.1/testrepo.git&#34;</span><span class="nt">/&gt;</span>
+            <span class="c">&lt;!-- This parameter will cause the monitor to terminate the process
+</span><span class="c">								 once the CPU usage reaches zero. --&gt;</span>
+            <span class="nt">&lt;Param</span> <span class="na">name=</span><span class="s">&#34;CpuKill&#34;</span> <span class="na">value=</span><span class="s">&#34;true&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Monitor&gt;</span>
+        <span class="nt">&lt;Monitor</span> <span class="na">class=</span><span class="s">&#34;CleanupFolder&#34;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Param</span> <span class="na">name=</span><span class="s">&#34;Folder&#34;</span> <span class="na">value=</span><span class="s">&#34;testrepo&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Monitor&gt;</span>
+    <span class="nt">&lt;/Agent&gt;</span>
+    <span class="nt">&lt;Test</span> <span class="na">name=</span><span class="s">&#34;Default&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Agent</span> <span class="na">ref=</span><span class="s">&#34;LinAgent&#34;</span> <span class="na">platform=</span><span class="s">&#34;linux&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;StateModel</span> <span class="na">ref=</span><span class="s">&#34;TheState&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;Publisher</span> <span class="na">class=</span><span class="s">&#34;TcpListener&#34;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Param</span> <span class="na">name=</span><span class="s">&#34;Interface&#34;</span> <span class="na">value=</span><span class="s">&#34;127.0.0.1&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;Param</span> <span class="na">name=</span><span class="s">&#34;Port&#34;</span> <span class="na">value=</span><span class="s">&#34;9418&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Publisher&gt;</span>
+        <span class="nt">&lt;Strategy</span> <span class="na">class=</span><span class="s">&#34;Random&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;Logger</span> <span class="na">class=</span><span class="s">&#34;Filesystem&#34;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Param</span> <span class="na">name=</span><span class="s">&#34;Path&#34;</span> <span class="na">value=</span><span class="s">&#34;logs&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/Logger&gt;</span>
+    <span class="nt">&lt;/Test&gt;</span>
+<span class="nt">&lt;/Peach&gt;</span>
+</code></pre></div><p>Your git client used a different port to connect to the git server when we did
+the capture than mine did. When you copy the xml file you will have to change
+the values as indicated with comments so that peach knows what files to use.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Change to the correct files</span>
+vim git.xml
+peach git.xml
+</code></pre></div><p>Peach is fuzzing the git protocol now! Good job you rock!</p>]]></content>
+  </entry>
+</feed>
