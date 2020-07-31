@@ -1,132 +1,110 @@
-baseURL = "https://pdxjohnny.github.io"
-
-title = "pdxjohnny's blog"
+######################## default configuration ####################
+baseURL = "https://www.example.com"
+title = "Persian"
+theme = "persian"
+languageName = "En"
 languageCode = "en-us"
-defaultContentLanguage = "en"
+# post pagination
+paginate = "5"
+# disqus short name
+disqusShortname = "" # get your shortname form here : https://disqus.com
 
-theme = "axiom"
-
-paginate = 10
-canonifyURLs = false
-summaryLength = 40
-rssLimit = 100
-enableEmoji = true
-enableRobotsTXT = true
-pluralizelisttitles = false
-
-[permalinks]
-posts = "/:filename"
-
-[params]
-mainSections = ["posts", "about"]
-copyrightYear = 2016
-# Go Reference time: Mon Jan 2 15:04:05 MST 2006
-dateFormat = "Jan 2, 2006 3:04PM"
-highlight = "dark"
-
-[params.brand]
-domain = "pdxjohnny.github.io"
-email = "johnandersenpdx@gmail.com"
-
-[params.social]
-github = "https://github.com/pdxjohnny"
-twitter = "https://twitter.com/pdxjohnny"
-linkedin = "https://www.linkedin.com/in/john-andersen-7a72b555/"
-footer = ["twitter", "github", "linkedin"]
-
-[params.logo]
-inline = false
-path = "images/avatar@2x.png"
-
-[params.services]
-analyticsId = "UA-160259978-2"
-adwordsId = ""
-adsenseId = ""
-adsenseAdSlotId = ""
-adsenseLoad = ""
-adwordsConversionId = ""
-adwordsConversionValue = 0
-facebookApp = ""
-facebookPixel = ""
-disqusShortname = ""
-
-[params.image]
-width = "2048"
-height = "1024"
-faviconIco = "favicon.ico"
-faviconAlt = "image/brand/favicon.png"
-icon1To1 = "image/brand/icon-1-1.png"
-icon2To1 = "image/brand/icon-2-1.png"
-default = "image/page-default.webp"
-
-[params.font]
-type = ""
-path = ""
-files = []
-
-[params.cdn]
-provider = "local"
-type = "image"
-
+############################# output ##############################
 [outputs]
-home = ["HTML", "ATOM"]
-section = ["HTML"]
-taxonomy = ["HTML"]
-taxonomyTerm = ["HTML"]
+home = [ "HTML", "RSS", "json"]
 
-[outputFormats]
-[outputFormats.ATOM]
-name = "ATOM"
-baseName = "feed"
-mediaType = "application/atom+xml"
-
-[mediaTypes]
-[mediaTypes."application/atom+xml"]
-suffixes = ["atom"]
-
-[markup]
-[markup.goldmark]
-[markup.goldmark.extensions]
-definitionList = false
-footnote = true
-linkify = true
-strikethrough = false
-table = true
-taskList = false
-typographer = false
+# render unsafe html
 [markup.goldmark.renderer]
-unsafe = false
-[markup.goldmark.parser]
-attribute = false
-[markup.highlight]
-codeFences = true
-noClasses = false
-tabWidth = 2
-# lineNos = true
-# lineNumbersInTable = false
+unsafe = true
 
-[menu]
+############################# Plugins ##############################
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/search/fuse.min.js"
+[[params.plugins.js]]
+link = "plugins/search/mark.js"
+[[params.plugins.js]]
+link = "plugins/search/search.js"
+
+
+################################ menu ##################################
 [[menu.main]]
-url = "/posts/"
-name = "Posts"
+name = "Home"
+URL = "/"
 weight = 1
 
 [[menu.main]]
-url = "/about/"
 name = "About"
+URL = "about"
 weight = 2
 
-[[menu.foot]]
-url = "/posts/"
-name = "Posts"
-weight = 1
+[[menu.main]]
+name = "Category"
+URL = "categories/nature/"
+weight = 3
 
-[[menu.foot]]
-url = "/about/"
-name = "About"
-weight = 2
+[[menu.main]]
+name = "Contact"
+URL = "contact"
+weight = 4
 
-[languages]
-[languages."en"]
-weight = 1
-languageName = "English"
+[[menu.main]]
+name = "Privacy Policy"
+URL = "privacy-policy"
+weight = 5
+
+
+#################### default parameters ################################
+[params]
+logo = "images/logo.png"
+# Meta data
+description = "This is meta description"
+author = "Themefisher"
+# search  
+search = true
+# contact form action
+contact_form_action = "#" # contact form works with https://formspree.io
+# copyright
+copyright = "Designed By [Themefisher](https://themefisher.com/) & Developed By [Gethugothemes](https://gethugothemes.com/)"
+
+# Preloader
+[params.preloader]
+enable = true
+preloader = "" # use jpg, png, svg or gif format.
+
+
+############################# social site ########################
+[[params.social]]
+title = "facebook"
+icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "twitter"
+icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "instagram"
+icon = "ti-instagram" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "github"
+icon = "ti-github" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "linkedin"
+icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+link = "#"
