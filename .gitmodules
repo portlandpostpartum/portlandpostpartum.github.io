@@ -11,3 +11,7 @@
 [submodule "themes/persian"]
 	path = themes/persian
 	url = git@github.com:portlandpostpartum/persian-hugo.git
+[submodule "public"]
+	path = public
+	url = git@github.com:portlandpostpartum/portlandpostpartum.github.io.git
+	branch = master
