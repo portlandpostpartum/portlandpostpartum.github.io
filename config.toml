@@ -48,6 +48,11 @@ name = "About"
 URL = "about"
 weight = 2
 
+[[menu.main]]
+name = "Posts"
+URL = "post"
+weight = 3
+
 
 #################### default parameters ################################
 [params]
