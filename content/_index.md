@@ -15,10 +15,11 @@ description: "Portland Postpartum Clinic is an integrative care clinic offering 
 
 <center>
 
-Portland Postpartum Clinic will be integrative care clinic offering acupuncture,
-lactation support, and postpartum care to new parents in the Portland area.
+Portland Postpartum Clinic will be an integrative care clinic offering
+acupuncture, lactation support, and postpartum care to new parents in the
+Portland area.
 
-We are a business in the making
+We are a business in the making.
 
 </center>
 
